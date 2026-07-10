@@ -96,16 +96,16 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 // RunningSpentCalories функция подсчета калорий при беге
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 {
-		return 0.0, fmt.Errorf("%w: steps must be greater than zero", ErrWrongArgument)
+		return 0, fmt.Errorf("%w: steps must be greater than zero", ErrWrongArgument)
 	}
-	if weight <= 0.0 {
-		return 0.0, fmt.Errorf("%w: weight must be greater than zero", ErrWrongArgument)
+	if weight <= 0 {
+		return 0, fmt.Errorf("%w: weight must be greater than zero", ErrWrongArgument)
 	}
-	if height <= 0.0 {
-		return 0.0, fmt.Errorf("%w: height must be greater than zero", ErrWrongArgument)
+	if height <= 0 {
+		return 0, fmt.Errorf("%w: height must be greater than zero", ErrWrongArgument)
 	}
 	if duration <= time.Duration(0) {
-		return 0.0, fmt.Errorf("%w: duration must be greater than zero", ErrWrongArgument)
+		return 0, fmt.Errorf("%w: duration must be greater than zero", ErrWrongArgument)
 	}
 
 	avgSpeed := meanSpeed(steps, height, duration)
@@ -116,16 +116,16 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 {
-		return 0.0, fmt.Errorf("%w: steps must be greater than zero", ErrWrongArgument)
+		return 0, fmt.Errorf("%w: steps must be greater than zero", ErrWrongArgument)
 	}
-	if weight <= 0.0 {
-		return 0.0, fmt.Errorf("%w: weight must be greater than zero", ErrWrongArgument)
+	if weight <= 0 {
+		return 0, fmt.Errorf("%w: weight must be greater than zero", ErrWrongArgument)
 	}
-	if height <= 0.0 {
-		return 0.0, fmt.Errorf("%w: height must be greater than zero", ErrWrongArgument)
+	if height <= 0 {
+		return 0, fmt.Errorf("%w: height must be greater than zero", ErrWrongArgument)
 	}
 	if duration <= time.Duration(0) {
-		return 0.0, fmt.Errorf("%w: duration must be greater than zero", ErrWrongArgument)
+		return 0, fmt.Errorf("%w: duration must be greater than zero", ErrWrongArgument)
 	}
 
 	avgSpeed := meanSpeed(steps, height, duration)
